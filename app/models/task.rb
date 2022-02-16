@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: tasks
+#
+#  id           :integer          not null, primary key
+#  completed_at :datetime
+#  size         :integer
+#  title        :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  project_id   :integer
+#
+# Indexes
+#
+#  index_tasks_on_project_id  (project_id)
+#
 class Task < ApplicationRecord
   belongs_to :project
 
