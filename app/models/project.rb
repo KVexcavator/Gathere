@@ -1,15 +1,10 @@
-class Project
-  class << self
+class Project < ApplicationRecord
+  has_many :tasks, dependent: :destroy
 
+  class << self
     def velocity_length_in_days
       21
     end
-  end
-
-  attr_accessor :tasks, :due_date
-
-  def initialize
-    @tasks = []
   end
 
   def incomplete_tasks
