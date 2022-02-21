@@ -17,6 +17,8 @@ class Project < ApplicationRecord
     end
   end
 
+  validates :name, presence: true
+
   def incomplete_tasks
     tasks.reject(&:complete?)
   end
